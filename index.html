@@ -4,8 +4,195 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            #image {
+                width: 35%;
+                height: 100vh;
+                background-image: url("https://images.unsplash.com/photo-1585202900225-6d3ac20a6962?q=80&w=1862&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+                background-size: cover;
+                background-position: center;
+            }
+            #innerImage {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 1rem;
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                margin-top: 7.5rem;
+                padding: 1rem;
+            }
+            #innerImage img {
+                width: 50px;
+            }
+
+            #innerImage h1 {
+                color: white;
+            }
+
+            #container {
+                width: 65%;
+                height: 100vh;
+            }
+
+            #textContent {
+                font-weight: bold;
+                margin-bottom: 1rem;
+                background-color: gainsboro;
+                padding: 1.5rem;
+            }
+
+            #textContent p {
+                max-width: 500px;
+                font-size: 14px;
+            }
+
+            form {
+                padding: 1.25rem 2rem;
+            }
+
+            form h2 {
+                margin-bottom: 25px;
+                font-size: 22px;
+            }
+
+            form section {
+                display: flex;
+                gap: 2rem;
+            }
+
+            fieldset {
+                display: flex;
+                justify-content: start;
+                align-items: start;
+                flex-direction: column;
+                border: none;
+                margin: 5px 0px;
+            }
+
+            label {
+                text-transform: uppercase;
+                font-size: 10px;
+                margin-bottom: 5px;
+                font-weight: 600;
+            }
+
+            input {
+                border-radius: 5px;
+                padding: 0.5rem;
+                border: 1px solid #e5e7eb;
+            }
+
+            input:focus {
+                border: 1px solid rgb(66, 66, 255);
+                outline: 1px solid rgb(66, 66, 255);
+            }
+
+            .passwordErrorText {
+                font-size: 12px;
+                color: red;
+                margin-top: 5px;
+                visibility: hidden;
+            }
+
+            input[type="password"]:invalid {
+                border: 1px solid red;
+                outline: 1px solid red;
+            }
+
+            input[type="password"]:invalid + .passwordErrorText {
+                visibility: visible;
+            }
+
+            button {
+                margin: 20px 0;
+                padding: 0.75rem 1.5rem;
+                background-color: #596d48;
+                color: white;
+                border: none;
+                border-radius: 7.5px;
+                cursor: pointer;
+            }
+            
+            form p {
+                font-size: 14px;
+            }
+
+            form p a {
+                color: #596d48;
+            }
+        </style>
     </head>
     <body>
-        <h1>hello world</h1>
+        <div id="image">
+            <div id="innerImage">
+                <img
+                    src="https://cdn.statically.io/gh/TheOdinProject/curriculum/5f37d43908ef92499e95a9b90fc3cc291a95014c/html_css/project-sign-up-form/odin-lined.png"
+                    alt="logo"
+                />
+                <h1>ODIN</h1>
+            </div>
+        </div>
+        <section id="container">
+            <section id="textContent">
+                <p>
+                    This is not a real online service! You know you need something like this in your
+                    life to help you realise your deepest dreams.
+                </p>
+                <p style="margin-top: 0.5rem">
+                    Sign up <span style="font-style: italic">now</span> to get started
+                </p>
+                <br />
+                <p>You <span style="font-style: italic">know</span> you want to.</p>
+            </section>
+            <form>
+                <h2>Let&apos;s do this!</h2>
+                <section>
+                    <fieldset>
+                        <label for="firstName">first name</label>
+                        <input type="text" id="firstName" required />
+                    </fieldset>
+                    <fieldset>
+                        <label for="lastName">last name</label>
+                        <input type="text" id="lastName" required />
+                    </fieldset>
+                </section>
+                <section>
+                    <fieldset>
+                        <label for="email">email</label>
+                        <input type="email" id="email" required />
+                    </fieldset>
+                    <fieldset>
+                        <label for="number">phone number</label>
+                        <input type="number" id="number" required />
+                    </fieldset>
+                </section>
+                <section>
+                    <fieldset>
+                        <label for="password">password</label>
+                        <input type="password" id="password" required />
+                        <p class="passwordErrorText">* passwords do not match</p>
+                    </fieldset>
+                    <fieldset>
+                        <label for="confirmPassword">confirm password</label>
+                        <input type="password" id="confirmPassword" required />
+                    </fieldset>
+                </section>
+                <section style="align-items: center">
+                    <button>Create Account</button>
+                    <p>Already have an account? <a href="#">Log in</a></p>
+                </section>
+            </form>
+        </section>
     </body>
 </html>
